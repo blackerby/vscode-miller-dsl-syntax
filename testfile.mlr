@@ -1,0 +1,119 @@
+
+# ----------------------------------------------------------------
+# Expect color for constants:
+M_PI M_E
+# Expect color for identifiers:
+M_UUU
+
+# ----------------------------------------------------------------
+# Expect color for string literals:
+"abc" "123"
+" "
+"this is \"very\" special"
+"abc 'def' ghi"
+
+# Expect mix:
+and "this is a string"
+'adsfasdf'
+'abc "def" ghi'
+
+# ----------------------------------------------------------------
+# Expect color for constant except 'falls':
+true falls false
+
+# Expect numeric literals:
+123
+0xabcd
+0b1101
+
+# Expect no highlighting:
+0xabcdxyz
+0xxxxx
+0b1021
+
+# Expect color for numeric literals:
+123
+123.
+123.4
+.234
+0.234
+1e2
+1e-2
+1.2e3 1.e3
+1.2e-3 1.e-3
+.2e3
+.2e-3 1.e-3
+
+# Expect magenta 3e4, non-magenta e5:
+3e4e5
+3e-4e5
+# ----------------------------------------------------------------
+# Expect color for identifiers:
+abc
+abc123
+abc_123
+_abc
+_123
+# Expect no highlighting:
+123abc
+
+# ----------------------------------------------------------------
+# Expect comment color:
+# comment
+not a comment # yup now it is
+### asfasdf
+aaa # a # b # cde
+
+# Expect comment color after '#':
+,,,,,, # here too
+,,, # a # b # cde
+
+# ----------------------------------------------------------------
+# Expect keyword color except IXS, contain, set:
+
+IPS IXS IFS IRS OPS OFS ORS OFLATSEP NF NR FNR FILENAME FILENUM
+ENV
+begin do elif else end filter for if in while break continue contain return
+func subr call dump edump
+emit emitp emitf eprint eprintn print printn tee stdout stderr set unset null
+
+# ----------------------------------------------------------------
+# Expect operator color in between 'a' and 'b':
+a !    b; a %    b; a &    b; a *    b; a +    b; a -    b;
+a .    b; a /    b; a :    b; a <    b; a >    b; a ?    b;
+a ^    b; a |    b; a ~    b; a !=   b; a &&   b; a **   b;
+a .*   b; a .+   b; a .+   b; a .-   b; a .-   b; a ./   b;
+a //   b; a <<   b; a <=   b; a ==   b; a =~   b; a >=   b;
+a >>   b; a ??   b; a ^^   b; a ||   b; a !=~  b; a .//  b;
+a >>>  b; a ???  b; a %=   b; a &=   b; a *=   b; a +=   b;
+a -=   b; a .=   b; a /=   b; a ^=   b; a |=   b; a &&=  b;
+a **=  b; a //=  b; a <<=  b; a >>=  b; a ??=  b; a ^^=  b;
+a ||=  b; a >>>= b; a ???= b;
+
+# ----------------------------------------------------------------
+# Expect type except 'strang strung ver vor':
+arr bool float int map num str var strang strung ver vor
+
+# Expect function call color for foo and bar:
+func foo(int x, str y, bool z) {
+}
+subr bar(int x,str y, bool z) {
+}
+$xa = foo($x, $y, $z)
+call foo($x, $y, $z)
+
+# ----------------------------------------------------------------
+# Expect variable color except @$ and $@:
+$abcde
+@abcde
+@$
+$@
+$*
+@*
+
+# ----------------------------------------------------------------
+# cannot implement in VSCode without extension?
+# Expect space-tab and trailing-space to be red:
+	  asdf
+ 	 asdf
+  asdf   

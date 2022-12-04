@@ -1,0 +1,37 @@
+{
+  "name": "miller-dsl",
+  "displayName": "Miller DSL",
+  "description": "Syntax highlighting for the programming language of the name-indexed data tool Miller",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "miller",
+        "aliases": [
+          "Miller",
+          "miller"
+        ],
+        "extensions": [
+          ".mlr"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "miller",
+        "scopeName": "source.mlr",
+        "path": "./syntaxes/miller.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
