@@ -2,6 +2,7 @@
   "name": "miller-dsl",
   "displayName": "Miller DSL",
   "description": "Syntax highlighting for the programming language of the name-indexed data tool Miller",
+  "homepage": "https://github.com/blackerby/vscode-miller-dsl-syntax",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.73.0"
